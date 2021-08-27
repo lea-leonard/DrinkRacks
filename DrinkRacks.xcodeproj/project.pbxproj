@@ -18,6 +18,7 @@
 		CAE0B75826D81D80005C7547 /* DrinksCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE0B75726D81D80005C7547 /* DrinksCellController.swift */; };
 		CAE0B75A26D8239E005C7547 /* DrinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE0B75926D8239E005C7547 /* DrinksViewController.swift */; };
 		CAE0B75C26D83B65005C7547 /* Drinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE0B75B26D83B65005C7547 /* Drinks.swift */; };
+		CAE0B75E26D86104005C7547 /* DrinksDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE0B75D26D86104005C7547 /* DrinksDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		CAE0B75726D81D80005C7547 /* DrinksCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksCellController.swift; sourceTree = "<group>"; };
 		CAE0B75926D8239E005C7547 /* DrinksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksViewController.swift; sourceTree = "<group>"; };
 		CAE0B75B26D83B65005C7547 /* Drinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drinks.swift; sourceTree = "<group>"; };
+		CAE0B75D26D86104005C7547 /* DrinksDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			children = (
 				CAE0B75726D81D80005C7547 /* DrinksCellController.swift */,
 				CAE0B75926D8239E005C7547 /* DrinksViewController.swift */,
+				CAE0B75D26D86104005C7547 /* DrinksDetailViewController.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				CAE0B75A26D8239E005C7547 /* DrinksViewController.swift in Sources */,
 				CA42A3DA26D8079B0014F98A /* AppDelegate.swift in Sources */,
 				CAE0B75826D81D80005C7547 /* DrinksCellController.swift in Sources */,
+				CAE0B75E26D86104005C7547 /* DrinksDetailViewController.swift in Sources */,
 				CA42A3DC26D8079B0014F98A /* SceneDelegate.swift in Sources */,
 				CA42A3E426D8079C0014F98A /* DrinkRacks.xcdatamodeld in Sources */,
 			);
