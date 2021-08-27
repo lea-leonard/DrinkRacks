@@ -26,7 +26,7 @@ class DrinksViewController: UIViewController {
         // self.drinksCollection.layer.cornerRadius = drinksCollection.frame.width / 2
         self.drinksCollection.layer.cornerRadius = CGFloat(integerLiteral: 50)
         self.drinksCollection.layer.borderWidth = 3
-        self.drinksCollection.layer.borderColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
+        self.drinksCollection.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         // fetch data from api
         getFetchData()
     }
