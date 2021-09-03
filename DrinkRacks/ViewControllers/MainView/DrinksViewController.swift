@@ -24,9 +24,9 @@ class DrinksViewController: UIViewController {
         
         // MARK: - USER INTERFACE DESIGN
         // self.drinksCollection.layer.cornerRadius = drinksCollection.frame.width / 2
-        self.drinksCollection.layer.cornerRadius = CGFloat(integerLiteral: 50)
-        self.drinksCollection.layer.borderWidth = 3
-        self.drinksCollection.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+      //  self.drinksCollection.layer.cornerRadius = CGFloat(integerLiteral: 50)
+      //  self.drinksCollection.layer.borderWidth = 3
+     //   self.drinksCollection.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         // fetch data from api
         getFetchData()
     }
@@ -160,9 +160,14 @@ extension DrinksViewController: UICollectionViewDataSource {
        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
            let cell = drinksCollection.dequeueReusableCell(withReuseIdentifier: "cellDrinks", for: indexPath) as! DrinksCellController
        
+        
+            // add custom UI design to cell
+            cell.layer.cornerRadius = CGFloat(integerLiteral: 20)
+            cell.layer.borderWidth = 2
+            cell.layer.borderColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
+        
             cell.lblDrinkName.text = drinks[indexPath.row].name
             guard let imgUrl = URL(string: drinks[indexPath.row].img ?? "none") else { return cell
-                
             }
             if let imgData = try? Data(contentsOf: imgUrl){
                 cell.imgDrink.layer.cornerRadius = 20
@@ -170,7 +175,11 @@ extension DrinksViewController: UICollectionViewDataSource {
                 cell.imgDrink.layer.borderColor = #colorLiteral(red: 0, green: 0.5603182912, blue: 0, alpha: 1)
                 cell.imgDrink.image = UIImage(data: imgData)
             }
-           return cell
+            
+        cell.lblCategory.text = drinks[indexPath.row].category
+        
+        
+        return cell
            
        
        }

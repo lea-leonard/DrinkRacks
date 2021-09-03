@@ -12,5 +12,7 @@ class DrinksCellController: UICollectionViewCell {
     
     @IBOutlet weak var lblDrinkName: UILabel!
     
+    @IBOutlet weak var imgChevron: UIImageView!
+    @IBOutlet weak var lblCategory: UILabel!
     @IBOutlet weak var imgDrink: UIImageView!
 }
