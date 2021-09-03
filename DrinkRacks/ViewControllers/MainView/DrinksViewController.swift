@@ -14,7 +14,7 @@ class DrinksViewController: UIViewController {
     @IBOutlet weak var drinksCollection: UICollectionView!
     
     // -- INSTANCE VARIABLES
-    //let sampleData = Array(repeating: "Drink Name", count: 20)
+
     var drinks = [Drinks]()
     private let apiURL = "https://the-cocktail-db.p.rapidapi.com/popular.php"
 
@@ -120,25 +120,30 @@ class DrinksViewController: UIViewController {
                tempData.img = drink["strDrinkThumb"] as? String
                tempData.favorite = false
                self.drinks.append(tempData)
-               
            }
            
            print("Number of records: \(drinks.count)")
-           
            
        }catch {
            print("************** ERROR IN CLASS FETCH API *****************")
        }
    }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
+        
+        guard let vcDetails = segue.destination as? DrinksDetailViewController, let selectedCell = sender as? DrinksCellController, let index = drinksCollection.indexPath(for: selectedCell) else {
+            print("ERROR WITH SELECTION")
+            return
+        }
+        
         // Pass the selected object to the new view controller.
+        vcDetails.drinkDetail = self.drinks[index.row]
     }
-    */
+    
 
 }
   // MARK: - UICOLLECTION DATASOURCE FUNCS
@@ -149,7 +154,6 @@ extension DrinksViewController: UICollectionViewDataSource {
        }
        
        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            print("datasource execute")
            return drinks.count
        }
        
@@ -157,11 +161,13 @@ extension DrinksViewController: UICollectionViewDataSource {
            let cell = drinksCollection.dequeueReusableCell(withReuseIdentifier: "cellDrinks", for: indexPath) as! DrinksCellController
        
             cell.lblDrinkName.text = drinks[indexPath.row].name
-            let imgUrl = URL(string: drinks[indexPath.row].img!)!
+            guard let imgUrl = URL(string: drinks[indexPath.row].img ?? "none") else { return cell
+                
+            }
             if let imgData = try? Data(contentsOf: imgUrl){
                 cell.imgDrink.layer.cornerRadius = 20
                 cell.imgDrink.layer.borderWidth = 2
-                cell.imgDrink.layer.borderColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
+                cell.imgDrink.layer.borderColor = #colorLiteral(red: 0, green: 0.5603182912, blue: 0, alpha: 1)
                 cell.imgDrink.image = UIImage(data: imgData)
             }
            return cell

@@ -10,13 +10,21 @@ import UIKit
 
 class DrinksDetailViewController: UIViewController {
 
-    // OUTLETS
+    // OUTLETS for Static View
     @IBOutlet weak var viewDrinkName: UIView!
     @IBOutlet weak var viewFavorite: UIView!
     @IBOutlet weak var viewGlassType: UIView!
     @IBOutlet weak var viewInstruction: UIView!
     @IBOutlet weak var btnFavorite: UIButton!
     
+    
+    // OUTLETS for Dynamic Data from Segue
+    @IBOutlet weak var lblGlassType: UILabel!
+    @IBOutlet weak var imgDrink: UIImageView!
+    @IBOutlet weak var lblInstructions: UILabel!
+    @IBOutlet weak var lblDrinkName: UILabel!
+    @IBOutlet weak var lblCategory: UILabel!
+    @IBOutlet weak var lblDate: UILabel!
     
     //: INSTANCE VARIABLES
     var drinkDetail : Drinks?
@@ -34,7 +42,38 @@ class DrinksDetailViewController: UIViewController {
         
         self.viewInstruction.layer.cornerRadius = 15
         
+        // TEST TO SEE  Drink Detail Model
+        if let drink = drinkDetail {
+            print("Detail are \(drink.name)")
+        } else {
+            print("NO DATA WAS PASSED")
+        }
+        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let aDrink = drinkDetail {
+            self.lblGlassType.text = aDrink.glassType
+            guard let urlImg = URL(string: aDrink.img ?? "none") else {
+                return
+            }
+            if let imgData = try? Data(contentsOf: urlImg){
+                self.imgDrink.image = UIImage(data: imgData)
+            }
+            self.lblInstructions.text = aDrink.instructions
+            self.lblDrinkName.text = aDrink.name
+            self.lblCategory.text = aDrink.category
+            let formatDate = DateFormatter()
+            formatDate.dateFormat = "MMM YYYY"
+            let strDate = String(describing: aDrink.dateModified)
+            let convertDate = formatDate.date(from: strDate)
+           // guard formatDate.date(from: strDate) != nil else {
+             //   assert(false, "no latest date")
+            //}
+            self.lblDate.text = strDate
+        }
+            
+    }// end viewWillAppear
     
     // MARK: IBActions
     

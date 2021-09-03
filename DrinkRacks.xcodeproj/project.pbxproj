@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA3F785126E2B24200ACBA4E /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3F785026E2B24200ACBA4E /* FavoritesViewController.swift */; };
+		CA3F785326E2B8DC00ACBA4E /* FavoritesCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3F785226E2B8DC00ACBA4E /* FavoritesCollectionCell.swift */; };
+		CA3F785626E2BD7B00ACBA4E /* Favorites+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3F785426E2BD7B00ACBA4E /* Favorites+CoreDataClass.swift */; };
+		CA3F785726E2BD7B00ACBA4E /* Favorites+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3F785526E2BD7B00ACBA4E /* Favorites+CoreDataProperties.swift */; };
 		CA42A3DA26D8079B0014F98A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA42A3D926D8079B0014F98A /* AppDelegate.swift */; };
 		CA42A3DC26D8079B0014F98A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA42A3DB26D8079B0014F98A /* SceneDelegate.swift */; };
 		CA42A3DE26D8079B0014F98A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA42A3DD26D8079B0014F98A /* ViewController.swift */; };
@@ -22,6 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA3F785026E2B24200ACBA4E /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		CA3F785226E2B8DC00ACBA4E /* FavoritesCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionCell.swift; sourceTree = "<group>"; };
+		CA3F785426E2BD7B00ACBA4E /* Favorites+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorites+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CA3F785526E2BD7B00ACBA4E /* Favorites+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorites+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CA42A3D626D8079B0014F98A /* DrinkRacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkRacks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA42A3D926D8079B0014F98A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA42A3DB26D8079B0014F98A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,7 +94,7 @@
 		CAE0B74C26D814D5005C7547 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				CAE0B74E26D814F8005C7547 /* FavoritesViw */,
+				CAE0B74E26D814F8005C7547 /* FavoritesView */,
 				CAE0B74D26D814E2005C7547 /* MainView */,
 			);
 			path = ViewControllers;
@@ -102,16 +110,20 @@
 			path = MainView;
 			sourceTree = "<group>";
 		};
-		CAE0B74E26D814F8005C7547 /* FavoritesViw */ = {
+		CAE0B74E26D814F8005C7547 /* FavoritesView */ = {
 			isa = PBXGroup;
 			children = (
+				CA3F785026E2B24200ACBA4E /* FavoritesViewController.swift */,
+				CA3F785226E2B8DC00ACBA4E /* FavoritesCollectionCell.swift */,
 			);
-			path = FavoritesViw;
+			path = FavoritesView;
 			sourceTree = "<group>";
 		};
 		CAE0B74F26D8151B005C7547 /* CoreDataModels */ = {
 			isa = PBXGroup;
 			children = (
+				CA3F785426E2BD7B00ACBA4E /* Favorites+CoreDataClass.swift */,
+				CA3F785526E2BD7B00ACBA4E /* Favorites+CoreDataProperties.swift */,
 			);
 			path = CoreDataModels;
 			sourceTree = "<group>";
@@ -197,6 +209,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA42A3DE26D8079B0014F98A /* ViewController.swift in Sources */,
+				CA3F785326E2B8DC00ACBA4E /* FavoritesCollectionCell.swift in Sources */,
+				CA3F785726E2BD7B00ACBA4E /* Favorites+CoreDataProperties.swift in Sources */,
 				CAE0B75226D81587005C7547 /* FetchApi.swift in Sources */,
 				CAE0B75C26D83B65005C7547 /* Drinks.swift in Sources */,
 				CAE0B75A26D8239E005C7547 /* DrinksViewController.swift in Sources */,
@@ -204,7 +218,9 @@
 				CAE0B75826D81D80005C7547 /* DrinksCellController.swift in Sources */,
 				CAE0B75E26D86104005C7547 /* DrinksDetailViewController.swift in Sources */,
 				CA42A3DC26D8079B0014F98A /* SceneDelegate.swift in Sources */,
+				CA3F785126E2B24200ACBA4E /* FavoritesViewController.swift in Sources */,
 				CA42A3E426D8079C0014F98A /* DrinkRacks.xcdatamodeld in Sources */,
+				CA3F785626E2BD7B00ACBA4E /* Favorites+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
