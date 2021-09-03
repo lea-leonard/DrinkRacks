@@ -175,7 +175,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wc6-LP-Y9s">
-                                        <rect key="frame" x="294" y="8" width="60" height="60"/>
+                                        <rect key="frame" x="294" y="5" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" image="heart" catalog="system">
@@ -252,7 +252,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mq9-A1-Rtc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2157.971014492754" y="93.75"/>
+            <point key="canvasLocation" x="2638" y="560"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7cn-7w-O5B">
@@ -348,7 +348,7 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="U7j-tt-eJa" kind="show" id="dYj-m4-Crm"/>
+                                                        <segue destination="ZTB-Pm-iSO" kind="show" id="QUD-YY-fJ4"/>
                                                     </connections>
                                                 </button>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="manWithDrink" translatesAutoresizingMaskIntoConstraints="NO" id="ipb-Uq-8fr">
@@ -416,16 +416,6 @@
             </objects>
             <point key="canvasLocation" x="1469.5652173913045" y="934.82142857142856"/>
         </scene>
-        <!--Storyboard Reference-->
-        <scene sceneID="rfB-zM-kdU">
-            <objects>
-                <viewControllerPlaceholder id="U7j-tt-eJa" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="QRJ-M8-Evb"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S7r-t7-MUm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2374" y="959"/>
-        </scene>
         <!--Favorites-->
         <scene sceneID="xYR-tk-rO8">
             <objects>
@@ -451,6 +441,9 @@
             <point key="canvasLocation" x="567" y="935"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="QUD-YY-fJ4"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="archivebox.fill" catalog="system" width="128" height="106"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>

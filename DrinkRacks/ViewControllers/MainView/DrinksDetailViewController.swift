@@ -28,7 +28,7 @@ class DrinksDetailViewController: UIViewController {
     
     //: INSTANCE VARIABLES
     var drinkDetail : Drinks?
-    var isFavorite : Bool = false
+    var isFav: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,13 +78,13 @@ class DrinksDetailViewController: UIViewController {
     // MARK: IBActions
     
     @IBAction func isFavorite(_ sender: UIButton) {
-        isFavorite.toggle()
-        switch isFavorite {
+        
+        isFav.toggle()
+        switch isFav {
         case true:
-            btnFavorite.imageView?.image = UIImage(systemName: ".heart.fill")
+            btnFavorite.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         case false:
-            btnFavorite.imageView?.image = UIImage(systemName: ".heart")
-            
+            btnFavorite.setImage(UIImage(systemName: "heart"), for: .normal)
         }
     }
     
