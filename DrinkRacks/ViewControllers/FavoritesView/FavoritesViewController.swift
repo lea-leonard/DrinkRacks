@@ -26,6 +26,16 @@ class FavoritesViewController: UIViewController {
         collectionFavorites.reloadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        do {
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            self.lstFavorites = try context.fetch(Favorites.fetchRequest())
+            self.collectionFavorites.reloadData()
+        } catch {
+            print("Error fetching FAVORITES")
+        }
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -48,7 +58,7 @@ extension FavoritesViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sampleModel.count
+        return lstFavorites.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -57,10 +67,10 @@ extension FavoritesViewController: UICollectionViewDataSource {
         // add custom ui design to cell
         cell.layer.cornerRadius = 25    
         
-        cell.lblDrinkName.text = self.sampleModel[indexPath.row].name
-        cell.lblCategory.text = self.sampleModel[indexPath.row].category
-        cell.imgDrink.image = UIImage(named: self.sampleModel[indexPath.row].img!)
-        //cell.imgDrink.image = UIImage(systemName: self.sampleModel[indexPath.row].img)
+        cell.lblDrinkName.text = self.lstFavorites[indexPath.row].name
+        cell.lblCategory.text = self.lstFavorites[indexPath.row].category
+        cell.imgDrink.image = UIImage(named: self.lstFavorites[indexPath.row].img!)
+        cell.imgDrink.image = UIImage(systemName: self.lstFavorites[indexPath.row].img!)
         
         return cell
     }

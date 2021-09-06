@@ -178,7 +178,7 @@
                                         <rect key="frame" x="294" y="5" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" image="heart" catalog="system">
+                                        <state key="normal" image="heart.slash.fill" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="black"/>
                                         </state>
                                         <connections>
@@ -447,7 +447,7 @@
     <resources>
         <image name="archivebox.fill" catalog="system" width="128" height="106"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
-        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="heart.slash.fill" catalog="system" width="128" height="112"/>
         <image name="imgMartini" width="200" height="300"/>
         <image name="ladyDrinking" width="1400" height="787"/>
         <image name="manWithDrink" width="1480" height="833"/>

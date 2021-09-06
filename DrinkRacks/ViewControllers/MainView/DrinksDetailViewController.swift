@@ -28,7 +28,7 @@ class DrinksDetailViewController: UIViewController {
     
     //: INSTANCE VARIABLES
     var drinkDetail : Drinks?
-    var isFav: Bool = false
+    var isFav: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,14 +79,57 @@ class DrinksDetailViewController: UIViewController {
     
     @IBAction func isFavorite(_ sender: UIButton) {
         
-        isFav.toggle()
+        //isFav.toggle()
         switch isFav {
         case true:
+            addToFavorite()
             btnFavorite.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            isFav = false
         case false:
-            btnFavorite.setImage(UIImage(systemName: "heart"), for: .normal)
+            confirmDelete()
         }
     }
+    
+    // MARK: Updating the Core Data Persistent Model
+   
+    private func addToFavorite() {
+       let isAdded = Favorites.newRecord(drinkDetails: self.drinkDetail!)
+        
+        //print status of saving to the  Core Data Context
+        print("Status of add to Favorites == \(isAdded)")
+    }
+    
+    private func deleteFavorite() {
+        guard let drinkName = self.drinkDetail?.name else {
+            return
+        }
+        let didDelete = Favorites.deleteRecord(name: drinkName)
+        print("Delete \(drinkName) was \(didDelete)")
+    }
+    
+    private func confirmDelete() {
+        guard let name = self.drinkDetail?.name else {
+            return
+        }
+        let alertCtrl = UIAlertController(title: "Remove \(name)", message: "You will lose all data for this drink.", preferredStyle: .actionSheet)
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: .default) {
+            [unowned self] action in
+            // unowned self means ARC of strong reference to this controller
+            self.deleteFavorite()
+            self.btnFavorite.setImage(UIImage(systemName: "heart.slash.fill"), for: .normal)
+            self.isFav = true
+        }// end  trailing closure of the UIAlertAction
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
+            [unowned self] action in
+            self.isFav = false
+        })
+        
+        alertCtrl.addAction(deleteAction)
+        alertCtrl.addAction(cancelAction)
+        
+    }// end confirmDelete()
     
     /*
     // MARK: - Navigation
